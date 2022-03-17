@@ -75,7 +75,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  // Add a video response
+  // Add a video response *** Reaction
   addVideoResponse(req, res) {
     Video.findOneAndUpdate(
       { _id: req.params.videoId },

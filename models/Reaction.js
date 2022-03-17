@@ -1,7 +1,7 @@
 const { Schema, Types } = require('mongoose');
 const formatDate = require("../utils/formatTime");
 
-// Reaction model
+// Reaction schema
 const reactionSchema = new Schema(
     {
         reactionId: {
