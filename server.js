@@ -1,11 +1,11 @@
-const express = require("express");
-const mongodb = require("mongodb").MongoClient;
-const data = require("./utils/data");
+const express = require('express');
+const mongodb = require('mongodb').MongoClient;
+const data = require('./utils/data');
 
 const app = express();
 const port = 3001;
 
-const connectionStringURI = `mongodb://localhost:27017/aNetworkApi`; //For Compass/Atlas
+const connectionStringURI = `mongodb://localhost:27017/aNetworkApi`;
 
 let db;
 
@@ -14,9 +14,10 @@ mongodb.connect(
   connectionStringURI,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err, client) => {
+    
     db = client.db();
-    db.collection("aNetworkApi").deleteMany({});
-    db.collection("aNetworkApi").insertMany(data, (err, res) => {
+    db.collection('aNetworkApi').deleteMany({});
+    db.collection('aNetworkApi').insertMany(data, (err, res) => {
       if (err) {
         return console.log(err);
       } else {
